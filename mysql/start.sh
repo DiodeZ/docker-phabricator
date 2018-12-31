@@ -6,8 +6,8 @@ if [ ! -d /var/lib/mysql/mysql ]; then
   cat << EOF | mysqld --user mysql --bootstrap
 USE mysql;
 FLUSH PRIVILEGES;
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' identified by 'notsosecret' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' identified by 'notsosecret' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' identified by '${ROOT_PASS:-notsosecret}' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' identified by '${ROOT_PASS:-notsosecret}' WITH GRANT OPTION;
 UPDATE user SET password = PASSWORD("") WHERE user='root' AND host='localhost';
 EOF
 fi

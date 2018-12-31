@@ -1,4 +1,4 @@
-version: '2'
+version: '2.2'
 services:
   php:
     build:
@@ -16,6 +16,7 @@ services:
       - phabricator
     depends_on:
       - aphlict
+    mem_limit: 50M
   phd:
     build:
       context: php
@@ -33,6 +34,7 @@ services:
       - phabricator
     depends_on:
       - aphlict
+    mem_limit: 30M
   aphlict:
     build:
       context: php
@@ -47,6 +49,7 @@ services:
     command: ["/usr/local/bin/aphlict"]
     networks:
       - phabricator
+    mem_limit: 50M
   mysql:
     build:
       context: mysql
@@ -59,6 +62,7 @@ services:
       - ./etc/my.cnf:/etc/mysql/conf.d/my.cnf:z
     networks:
       - phabricator
+    mem_limit: 250M
   nginx:
     build: nginx
     restart: always
@@ -72,6 +76,7 @@ services:
     depends_on:
       - php
       - aphlict
+    mem_limit: 10M
 networks:
   phabricator:
     external: false

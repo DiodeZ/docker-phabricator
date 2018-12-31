@@ -1,8 +1,9 @@
 {
   "pygments.enabled": true,
   "storage.mysql-engine.max-size": 8388608,
-  "security.alternate-file-domain": "https://phab.example.com",
-  "phabricator.base-uri": "https://phab.example.com",
+  "security.alternate-file-domain": "http://192.168.1.11:8080",
+  "phabricator.base-uri": "http://192.168.1.11:8080",
+  "repository.default-local-path": "/var/repo",
   "mysql.host": "mysql",
   "mysql.user": "root",
   "mysql.pass": "notsosecret"

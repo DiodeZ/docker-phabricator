@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM arm32v6/alpine:3.8
 RUN apk add --no-cache nginx
 RUN sed -i '/user nginx;/d' /etc/nginx/nginx.conf
 RUN sed -i 's/worker_processes auto;/worker_processes 1;/g' /etc/nginx/nginx.conf

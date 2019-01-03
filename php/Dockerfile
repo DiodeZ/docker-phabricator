@@ -1,6 +1,7 @@
 FROM arm32v6/alpine:3.8
 RUN apk add --no-cache \
     git \
+    git-daemon \
     mercurial \
     ncurses \
     nodejs \

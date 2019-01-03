@@ -1,9 +1,12 @@
 {
   "pygments.enabled": true,
   "storage.mysql-engine.max-size": 8388608,
-  "security.alternate-file-domain": "http://192.168.1.11:8080",
-  "phabricator.base-uri": "http://192.168.1.11:8080",
+  "security.alternate-file-domain": "http://hi.onthewifi.com:8080",
+  "phabricator.base-uri": "http://hi.onthewifi.com:8080",
   "repository.default-local-path": "/var/repo",
+  "diffusion.allow-http-auth": true,
+  "security.require-https": false,
+  "environment.append-paths": ["/src/phabricator/support/bin","/bin","/usr/bin","/usr/local/bin","/usr/libexec/git-core"],
   "mysql.host": "mysql",
   "mysql.user": "root",
   "mysql.pass": "notsosecret"
